@@ -67,7 +67,11 @@ button {
   margin-right: auto;
 }
 .header {
+  box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 2px 1px 0px rgba(46, 47, 66, 0.08);
   border-bottom: 1px solid #e7e9fc;
+  background-color: #fff;
 }
 .header-container {
   justify-content: space-between;
@@ -119,7 +123,7 @@ button {
   line-height: 1.5em;
   letter-spacing: 0.02em;
   color: #2e2f42;
-  transition: color 300ms ease-in-out;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-link:hover,
 .header-link:focus,
@@ -150,7 +154,7 @@ button {
   font-weight: 400;
   line-height: 1.5em;
   letter-spacing: 0.02em;
-  transition: color 300ms ease-in-out;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-address-link:hover,
 .header-address-link:focus {
@@ -234,12 +238,16 @@ button {
   border-radius: 50%;
   color: black;
   background-color: #4d5ae5;
-  transition: background-color 300ms ease-in-out;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .socials-link:hover,
 .socials-link:focus {
   background-color: #404bbf;
 }
+.socialss-icon {
+  fill: #f4f4fd;
+}
+
 .socials-links {
   display: flex;
   justify-content: center;
@@ -267,11 +275,11 @@ button {
 
 /* main */
 .main-hero {
+  max-width: 1440px;
   padding: 188px 0;
   color: #ffffff;
   background-color: #2e2f42;
   background-image: linear-gradient(
-      to bottom,
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
@@ -317,7 +325,7 @@ button {
   letter-spacing: 0.04em;
   color: #ffffff;
   background-color: #4d5ae5;
-  transition: background-color 300ms ease-in-out;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-hero:hover,
 .button-hero:focus,
