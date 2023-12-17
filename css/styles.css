@@ -30,7 +30,10 @@ ol {
   margin: 0;
   padding: 0;
 }
-
+.img {
+  display: block;
+  max-width: 100%;
+}
 a {
   text-decoration: none;
   color: currentColor;
@@ -190,12 +193,19 @@ button {
   line-height: 1.5em;
   letter-spacing: 0.02em;
 }
-
+.containers {
+  display: flex;
+  width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .footer-hero {
   display: flex;
 }
-.footer-block {
-  padding-left: 120px;
+.footer-left {
+  margin-right: 120px;
 }
 .socialss {
   margin-top: 8px;
@@ -277,8 +287,8 @@ button {
   margin: auto;
 
   display: flex;
-  max-width: 526px;
-  padding-bottom: 48px;
+  max-width: 496px;
+  margin-bottom: 48px;
   flex-shrink: 0;
   text-align: center;
   font-size: 56px;
@@ -352,11 +362,8 @@ h3 {
   justify-content: center;
 }
 .our-team-item {
-  width: 264px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: calc((100% - 24px * 3) / 4);
+
   border-radius: 0px 0px 4px 4px;
   background: var(--WHITE, #fff);
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
@@ -376,18 +383,14 @@ h3 {
 
 .name-app {
   flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
+
   padding: 32px 16px;
-  margin-bottom: 8px;
+
   border: 1px solid #e7e9fc;
   background-color: #fff;
   border-top: none;
 }
 .our-team-h {
-  text-align: center;
   margin-bottom: 8px;
   color: #2e2f42;
   font-size: 20px;
@@ -397,8 +400,6 @@ h3 {
 }
 
 .our-team-p {
-  /* text-align: center; */
-  width: 264px;
   line-height: 1.5em;
   letter-spacing: 0.02em;
 }
@@ -410,6 +411,11 @@ h3 {
   gap: 24px;
   justify-content: center;
 }
+.main-group {
+  width: calc((100% - 24px * 3) / 4);
+  box-sizing: border-box;
+}
+
 .main-wrepper {
   width: 264px;
   height: 112px;
