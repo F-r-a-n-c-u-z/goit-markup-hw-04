@@ -105,40 +105,55 @@ button {
   gap: 40px;
 }
 .header-item {
+  top: 0;
+  left: 0;
 }
 .header-link {
+  position: relative;
   display: inline-block;
   padding: 24px 0;
   font-weight: 500;
   line-height: 1.5em;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  transition: color 300ms ease-in-out;
 }
-.header-link:hover {
+.header-link:hover,
+.header-link:focus,
+.header-link.active {
   color: #404bbf;
 }
-.header-link:focus {
-  color: #404bbf;
+
+.header-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #404bbf;
 }
+
 .address {
   font-style: normal;
 }
-.socials {
+.header-address-list {
   display: flex;
   gap: 40px;
 }
 
-.socials-link {
+.header-address-link {
   font-weight: 400;
   line-height: 1.5em;
   letter-spacing: 0.02em;
+  transition: color 300ms ease-in-out;
 }
-.socials-link:hover {
+.header-address-link:hover,
+.header-address-link:focus {
   color: #404bbf;
 }
-.socials-link:focus {
-  color: #404bbf;
-}
+
 /* #endregion */
 /* footer */
 .footer-logo-accent {
@@ -152,7 +167,7 @@ button {
 }
 .footer-logo {
   margin-bottom: 16px;
-  display: inline-block;
+  display: inline-flex;
   align-items: center;
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
@@ -166,11 +181,77 @@ button {
   padding: 100px 0;
   background: #2e2f42;
 }
+.footer-div {
+}
 .footer-p {
+  display: flex;
   width: 264px;
-  color: var(--CLOUD, #f4f4fd);
+  color: #f4f4fd;
   line-height: 1.5em;
   letter-spacing: 0.02em;
+}
+
+.footer-hero {
+  display: flex;
+}
+.footer-block {
+  padding-left: 120px;
+}
+.socialss {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.socials-item {
+  width: 40px;
+  height: 40px;
+}
+.socials-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  color: black;
+  background-color: #4d5ae5;
+  transition: background-color 300ms ease-in-out;
+}
+.socials-link:hover,
+.socials-link:focus {
+  background-color: #404bbf;
+}
+.socials-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  color: black;
+  background-color: #4d5ae5;
+  transition: background-color 300ms ease-in-out;
+}
+.socials-links:hover,
+.socials-links:focus {
+  background-color: #31d0aa;
+}
+
+.footer-h {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5em;
+  letter-spacing: 0.02em;
+  color: #fff;
 }
 
 /* main */
@@ -225,13 +306,10 @@ button {
   letter-spacing: 0.04em;
   color: #ffffff;
   background-color: #4d5ae5;
+  transition: background-color 300ms ease-in-out;
 }
-.button-hero:hover {
-  background-color: #404bbf;
-}
-.button-hero:focus {
-  background-color: #404bbf;
-}
+.button-hero:hover,
+.button-hero:focus,
 .button-hero:active {
   background-color: #404bbf;
 }
@@ -288,6 +366,14 @@ h3 {
 .name-worker {
   padding: 32px 0;
 }
+.header-address-list-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+}
+
 .name-app {
   flex-shrink: 0;
   display: flex;
@@ -311,7 +397,7 @@ h3 {
 }
 
 .our-team-p {
-  text-align: center;
+  /* text-align: center; */
   width: 264px;
   line-height: 1.5em;
   letter-spacing: 0.02em;
@@ -324,7 +410,17 @@ h3 {
   gap: 24px;
   justify-content: center;
 }
-.main-group {
+.main-wrepper {
+  width: 264px;
+  height: 112px;
+  flex-shrink: 0;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid #8e8f99;
+  background-color: #f4f4fd;
 }
 
 /* Our Portfolio */
@@ -351,3 +447,43 @@ h3 {
   line-height: 1.5em;
   letter-spacing: 0.02em;
 }
+.scroll-down {
+  position: relative;
+  overflow: hidden;
+}
+.our-portfolio-item:hover .overlay {
+  transform: translateY(0);
+}
+.overlay {
+  transform: translateY(100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 40px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  line-height: 1.5em;
+  letter-spacing: 0, 02em;
+  color: #fdf4fb;
+  background-color: #4d5ae5;
+  transition: transform 400ms ease-in;
+}
+
+/* Модальное окно */
+/* .backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+ z-index: 1000;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.3);
+} */
