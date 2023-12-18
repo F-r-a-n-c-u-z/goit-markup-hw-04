@@ -197,6 +197,10 @@ button {
   line-height: 1.5em;
   letter-spacing: 0.02em;
 }
+.icon {
+  fill: #f4f4fd;
+}
+
 .containers {
   display: flex;
   align-items: baseline;
